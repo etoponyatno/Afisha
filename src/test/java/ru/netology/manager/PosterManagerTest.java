@@ -16,7 +16,7 @@ class PosterManagerTest {
     PosterItem sixth = new PosterItem(1, 1, "sixth", "genre");
     PosterItem seventh = new PosterItem(1, 1, "seventh", "genre");
     PosterItem eighth = new PosterItem(1, 1, "eighth", "genre");
-    PosterItem nineth = new PosterItem(1, 1, "nineth", "genre");
+    PosterItem ninth = new PosterItem(1, 1, "ninth", "genre");
     PosterItem tenth = new PosterItem(1, 1, "tenth", "genre");
     PosterItem eleventh = new PosterItem(1, 1, "eleventh", "genre");
 
@@ -43,10 +43,10 @@ class PosterManagerTest {
         posterManager.add(sixth);
         posterManager.add(seventh);
         posterManager.add(eighth);
-        posterManager.add(nineth);
+        posterManager.add(ninth);
         posterManager.add(tenth);
         PosterItem[] actual = posterManager.getAll();
-        PosterItem[] expected = new PosterItem[]{tenth, nineth, eighth, seventh, sixth, fifth, fourth, third, second, first};
+        PosterItem[] expected = new PosterItem[]{tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
         assertArrayEquals(actual, expected);
 
     }
@@ -61,11 +61,11 @@ class PosterManagerTest {
         posterManager.add(sixth);
         posterManager.add(seventh);
         posterManager.add(eighth);
-        posterManager.add(nineth);
+        posterManager.add(ninth);
         posterManager.add(tenth);
         posterManager.add(eleventh);
         PosterItem[] actual = posterManager.getAll();
-        PosterItem[] expected = new PosterItem[]{eleventh, tenth, nineth, eighth, seventh, sixth, fifth, fourth, third, second};
+        PosterItem[] expected = new PosterItem[]{eleventh, tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second};
         assertArrayEquals(actual, expected);
     }
 
