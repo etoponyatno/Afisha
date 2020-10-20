@@ -41,7 +41,6 @@ public class AfishaRepository {
                 index++;
             }
         }
-        // меняем наши элементы
         items = tmp;
     }
 

@@ -28,14 +28,14 @@ public class AfishaRepositoryTest {
     @Test
     void shouldSaveAndFindAll() {
         AfishaItem[] actual = repository.findAll();
-        AfishaItem[] expected = new AfishaItem[] {first,second,third,fourth};
+        AfishaItem[] expected = new AfishaItem[]{first, second, third, fourth};
         assertArrayEquals(expected, actual);
     }
 
     @Test
     void shouldFindAll() {
         AfishaItem[] actual = repository.findAll();
-        AfishaItem[] expected = new AfishaItem[] {first,second,third,fourth};
+        AfishaItem[] expected = new AfishaItem[]{first, second, third, fourth};
         assertArrayEquals(expected, actual);
 
     }
@@ -45,7 +45,7 @@ public class AfishaRepositoryTest {
         int id = 2;
         AfishaItem actual = repository.findById(id);
         AfishaItem expected = second;
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
     }
 
@@ -54,23 +54,23 @@ public class AfishaRepositoryTest {
         int id = 5;
         AfishaItem actual = repository.findById(id);
         AfishaItem expected = null;
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
     void shouldRemoveById() {
         int id = 2;
         repository.removeById(id);
-        AfishaItem [] actual = repository.findAll();
-        AfishaItem [] expected = new AfishaItem [] {first,third,fourth};
+        AfishaItem[] actual = repository.findAll();
+        AfishaItem[] expected = new AfishaItem[]{first, third, fourth};
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldRemoveAll(){
+    void shouldRemoveAll() {
         repository.removeAll();
         AfishaItem[] actual = repository.findAll();
         AfishaItem[] expected = null;
-        assertEquals(actual,expected);
+        assertEquals(actual, expected);
     }
 }
