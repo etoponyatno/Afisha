@@ -31,16 +31,18 @@ public class AfishaRepository {
         }
     }
 
-    public AfishaItem removeById(int id) {
-        for (AfishaItem item : items
-        ) {
+    public void removeById(int id) {
+        int length = items.length - 1;
+        AfishaItem[] tmp = new AfishaItem[length];
+        int index = 0;
+        for (AfishaItem item : items) {
             if (item.getId() != id) {
-                return item;
+                tmp[index] = item;
+                index++;
             }
         }
-        {
-            return null;
-        }
+        // меняем наши элементы
+        items = tmp;
     }
 
     public void removeAll() {
