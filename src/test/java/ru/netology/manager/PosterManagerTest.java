@@ -9,16 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class PosterManagerTest {
     private PosterManager posterManager = new PosterManager();
     PosterItem first = new PosterItem(1, 1, "first", "genre");
-    PosterItem second = new PosterItem(1, 1, "second", "genre");
-    PosterItem third = new PosterItem(1, 1, "third", "genre");
-    PosterItem fourth = new PosterItem(1, 1, "fourth", "genre");
-    PosterItem fifth = new PosterItem(1, 1, "fifth", "genre");
-    PosterItem sixth = new PosterItem(1, 1, "sixth", "genre");
-    PosterItem seventh = new PosterItem(1, 1, "seventh", "genre");
-    PosterItem eighth = new PosterItem(1, 1, "eighth", "genre");
-    PosterItem ninth = new PosterItem(1, 1, "ninth", "genre");
-    PosterItem tenth = new PosterItem(1, 1, "tenth", "genre");
-    PosterItem eleventh = new PosterItem(1, 1, "eleventh", "genre");
+    PosterItem second = new PosterItem(2, 2, "second", "genre");
+    PosterItem third = new PosterItem(3, 3, "third", "genre");
+    PosterItem fourth = new PosterItem(4, 4, "fourth", "genre");
+    PosterItem fifth = new PosterItem(5, 5, "fifth", "genre");
+    PosterItem sixth = new PosterItem(6, 6, "sixth", "genre");
+    PosterItem seventh = new PosterItem(7, 7, "seventh", "genre");
+    PosterItem eighth = new PosterItem(8, 8, "eighth", "genre");
+    PosterItem ninth = new PosterItem(9, 9, "ninth", "genre");
+    PosterItem tenth = new PosterItem(10, 10, "tenth", "genre");
+    PosterItem eleventh = new PosterItem(11, 11, "eleventh", "genre");
 
 
     @Test
