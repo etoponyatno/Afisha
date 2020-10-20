@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class PosterItem {
+public class AfishaItem {
   private int id;
   private int posterId;
   private String posterName;

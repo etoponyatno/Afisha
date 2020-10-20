@@ -1,24 +1,24 @@
 package ru.netology.manager;
 
-import ru.netology.domain.PosterItem;
+import ru.netology.domain.AfishaItem;
 
-public class PosterManager {
-    private PosterItem[] items = new PosterItem[0];
-    private int limitOfPosters = 10;
+public class AfishaManager {
+    private AfishaItem[] items = new AfishaItem[0];
+    private int limitOfPosters = 3;
 
 
-    public void add(PosterItem item) {
+    public void add(AfishaItem item) {
         int length = items.length + 1;
-        PosterItem[] tmp = new PosterItem[length];
+        AfishaItem[] tmp = new AfishaItem[length];
         System.arraycopy(items, 0, tmp, 0, items.length);
         int lastIndex = tmp.length - 1;
         tmp[lastIndex] = item;
         items = tmp;
     }
 
-    public PosterItem[] getAll() {
-        PosterItem[] result = new PosterItem[items.length];
-        PosterItem[] limitOfPosters = new PosterItem[this.limitOfPosters];
+    public AfishaItem[] getAll() {
+        AfishaItem[] result = new AfishaItem[items.length];
+        AfishaItem[] limitOfPosters = new AfishaItem[this.limitOfPosters];
         for (int i = 0; i < items.length; i++) {
             int index = items.length - i - 1;
             result[i] = items[index];
