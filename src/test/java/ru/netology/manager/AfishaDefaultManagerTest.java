@@ -42,57 +42,12 @@ class AfishaDefaultManagerTest {
     @Test
     void ShouldRemoveIfIdNonExist () {
         int id = 5;
-        AfishaItem[] returned = new AfishaItem[] {first, second, third, fourth};
+        AfishaItem[] returned = new AfishaItem[] {second, third, fourth};
         doReturn(returned).when(repository).findAll();
         doNothing().when(repository).removeById(id);
         afishaManager.removeById(id);
-        AfishaItem[] expected = new AfishaItem[] {fourth, third, second, first};
+        AfishaItem[] expected = new AfishaItem[] {fourth, third, second};
         AfishaItem[] actual = afishaManager.getAll();
         assertArrayEquals(expected, actual);
     }
-
-
-
-
-//    @Test
-//    void GetAllLessLimit() {
-//        afishaManager.add(first);
-//        afishaManager.add(second);
-//        AfishaItem[] returned = new AfishaItem[]{first, second};
-//        doReturn(returned).when(repository).findAll();
-//        AfishaItem[] actual = afishaManager.getAll();
-//        AfishaItem[] expected = new AfishaItem[]{second, first};
-//
-//        assertArrayEquals(actual, expected);
-//
-//    }
-//
-//    @Test
-//    void getAllEqualsLimit() {
-//        afishaManager.add(first);
-//        afishaManager.add(second);
-//        afishaManager.add(third);
-//        AfishaItem[] returned = new AfishaItem[]{first, second, third};
-//        doReturn(returned).when(repository).findAll();
-//
-//        AfishaItem[] actual = afishaManager.getAll();
-//        AfishaItem[] expected = new AfishaItem[]{third, second, first};
-//        assertArrayEquals(actual, expected);
-//
-//    }
-//
-//    @Test
-//    void getAllOverLimit() {
-//        afishaManager.add(first);
-//        afishaManager.add(second);
-//        afishaManager.add(third);
-//        afishaManager.add(fourth);
-//        AfishaItem[] returned = new AfishaItem[]{second, third, fourth};
-//        doReturn(returned).when(repository).findAll();
-//
-//        AfishaItem[] actual = afishaManager.getAll();
-//        AfishaItem[] expected = new AfishaItem[]{fourth, third, second};
-//        assertArrayEquals(actual, expected);
-//    }
-
 }
