@@ -6,6 +6,13 @@ public class PosterManager {
     private PosterItem[] items = new PosterItem[0];
     private int limitOfPosters = 10;
 
+    public PosterManager() {
+    }
+
+    public PosterManager(int limitOfPosters) {
+        this.limitOfPosters = limitOfPosters;
+    }
+
 
     public void add(PosterItem item) {
         int length = items.length + 1;
@@ -17,19 +24,13 @@ public class PosterManager {
     }
 
     public PosterItem[] getAll() {
-        PosterItem[] result = new PosterItem[items.length];
-        PosterItem[] limitOfPosters = new PosterItem[this.limitOfPosters];
-        for (int i = 0; i < items.length; i++) {
+        int resultLength = items.length;
+        if (resultLength >= limitOfPosters) resultLength = limitOfPosters;
+        PosterItem[] result = new PosterItem[resultLength];
+        for (int i = 0; i < result.length; i++) {
             int index = items.length - i - 1;
             result[i] = items[index];
         }
-        if (items.length >= this.limitOfPosters) {
-            for (int i = 0; i < this.limitOfPosters; i++) {
-                limitOfPosters[i] = result[i];
-            }
-            return limitOfPosters;
-        } else {
-            return result;
-        }
+        return result;
     }
 }
