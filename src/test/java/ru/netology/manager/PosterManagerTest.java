@@ -20,21 +20,8 @@ class PosterManagerTest {
     PosterItem tenth = new PosterItem(10, 10, "tenth", "genre");
     PosterItem eleventh = new PosterItem(11, 11, "eleventh", "genre");
 
-
-    @Test
-    void GetAllLessLimit() {
-        posterManager.add(first);
-        posterManager.add(second);
-        posterManager.add(third);
-        PosterItem[] actual = posterManager.getAll();
-        PosterItem[] expected = new PosterItem[]{third, second, first};
-
-        assertArrayEquals(actual, expected);
-
-    }
-
-    @Test
-    void getAllEqualsLimit() {
+    @BeforeEach
+    void SetUp(){
         posterManager.add(first);
         posterManager.add(second);
         posterManager.add(third);
@@ -44,6 +31,20 @@ class PosterManagerTest {
         posterManager.add(seventh);
         posterManager.add(eighth);
         posterManager.add(ninth);
+    }
+
+
+    @Test
+    void GetAllLessLimit() {
+        PosterItem[] actual = posterManager.getAll();
+        PosterItem[] expected = new PosterItem[]{ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
+
+        assertArrayEquals(actual, expected);
+
+    }
+
+    @Test
+    void getAllEqualsLimit() {
         posterManager.add(tenth);
         PosterItem[] actual = posterManager.getAll();
         PosterItem[] expected = new PosterItem[]{tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
@@ -53,15 +54,6 @@ class PosterManagerTest {
 
     @Test
     void getAllOverLimit() {
-        posterManager.add(first);
-        posterManager.add(second);
-        posterManager.add(third);
-        posterManager.add(fourth);
-        posterManager.add(fifth);
-        posterManager.add(sixth);
-        posterManager.add(seventh);
-        posterManager.add(eighth);
-        posterManager.add(ninth);
         posterManager.add(tenth);
         posterManager.add(eleventh);
         PosterItem[] actual = posterManager.getAll();

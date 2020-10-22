@@ -1,5 +1,6 @@
 package ru.netology.manager;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.PosterItem;
 
@@ -15,12 +16,16 @@ public class PosterManagerCustomTest {
     PosterItem fifth = new PosterItem(5, 5, "fifth", "genre");
     PosterItem sixth = new PosterItem(6, 6, "sixth", "genre");
 
+    @BeforeEach
+    void SetUp(){
+        posterManager.add(first);
+        posterManager.add(second);
+        posterManager.add(third);
+    }
+
 
     @Test
     void GetAllLessLimit() {
-        posterManager.add(first);
-        posterManager.add(second);
-        posterManager.add(third);;
         PosterItem[] actual = posterManager.getAll();
         PosterItem[] expected = new PosterItem[]{third, second, first};
 
@@ -30,9 +35,6 @@ public class PosterManagerCustomTest {
 
     @Test
     void getAllEqualsLimit() {
-        posterManager.add(first);
-        posterManager.add(second);
-        posterManager.add(third);
         posterManager.add(fourth);
         posterManager.add(fifth);
         PosterItem[] actual = posterManager.getAll();
@@ -43,9 +45,6 @@ public class PosterManagerCustomTest {
 
     @Test
     void getAllOverLimit() {
-        posterManager.add(first);
-        posterManager.add(second);
-        posterManager.add(third);
         posterManager.add(fourth);
         posterManager.add(fifth);
         posterManager.add(sixth);
