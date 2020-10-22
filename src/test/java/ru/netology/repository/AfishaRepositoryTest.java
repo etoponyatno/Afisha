@@ -70,7 +70,7 @@ public class AfishaRepositoryTest {
     void shouldRemoveAll() {
         repository.removeAll();
         AfishaItem[] actual = repository.findAll();
-        AfishaItem[] expected = null;
-        assertEquals(actual, expected);
+        AfishaItem[] expected = new AfishaItem[]{};
+        assertArrayEquals(actual, expected);
     }
 }
