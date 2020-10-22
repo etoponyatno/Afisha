@@ -48,5 +48,6 @@ public class AfishaCustomManagerTest {
         AfishaItem[] expected = new AfishaItem[] {fourth, third, second, first};
         AfishaItem[] actual = afishaManager.getAll();
         assertArrayEquals(expected, actual);
+        verify(repository).removeById(id);
     }
 }

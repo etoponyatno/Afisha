@@ -1,23 +1,20 @@
 package ru.netology.manager;
 
+import lombok.NoArgsConstructor;
 import ru.netology.domain.AfishaItem;
 import ru.netology.repository.AfishaRepository;
 
+@NoArgsConstructor
 public class AfishaManager {
     private int limitOfPosters = 3;
     private AfishaRepository repository;
 
-    public AfishaManager(AfishaRepository repository) {
-        this.repository = repository;
-    }
 
     public AfishaManager(int limitOfPosters, AfishaRepository repository) {
         this.limitOfPosters = limitOfPosters;
         this.repository = repository;
     }
 
-    public AfishaManager() {
-    }
 
 
     public void add(AfishaItem item) {
